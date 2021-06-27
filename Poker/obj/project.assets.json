@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Simon\\source\\repos\\Poker\\Poker\\Poker.csproj",
+      "projectUniqueName": "C:\\Users\\Simon\\Source\\Repos\\SimonTsankov\\poker\\Poker\\Poker.csproj",
       "projectName": "Poker",
-      "projectPath": "C:\\Users\\Simon\\source\\repos\\Poker\\Poker\\Poker.csproj",
+      "projectPath": "C:\\Users\\Simon\\Source\\Repos\\SimonTsankov\\poker\\Poker\\Poker.csproj",
       "packagesPath": "C:\\Users\\Simon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Simon\\source\\repos\\Poker\\Poker\\obj\\",
+      "outputPath": "C:\\Users\\Simon\\Source\\Repos\\SimonTsankov\\poker\\Poker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -68,7 +68,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

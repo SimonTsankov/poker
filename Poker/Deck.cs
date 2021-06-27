@@ -9,6 +9,7 @@ namespace Poker
         public List<Card> Cards = new List<Card>();
         public void fillDeck()
         {
+            Cards.RemoveRange(0,Cards.Count);
             int clubs = 0;
             
             for(int i = 0; i < 52; i++)

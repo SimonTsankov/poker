@@ -18,10 +18,12 @@ namespace Poker
             {
 
                 List<Card> allCards = new List<Card>();
+               
                 allCards.Add(card1);
                 allCards.Add(card2);
-
-                if (Form1.move == 5)
+                
+                allCards = allCards.Concat(table.cards).ToList();
+                /*if (Form1.move == 5)
                     allCards = allCards.Concat(table.cards).ToList();
                 if (Form1.move == 4)
                 {
@@ -39,9 +41,9 @@ namespace Poker
                         allCards.Add(table.cards[1]);
                         allCards.Add(table.cards[2]);
                     }
-                }
+                }*/
                 // MessageBox.Show(Form1.move+"");
-               
+
                 if (Combinations.isStraight(allCards, this) && Combinations.isFlush(allCards,this)) return combination.straightFlush;
                 if (Combinations.isFourOfKind(allCards, this)) return combination.fourOfKind;
                 if (Combinations.isFullHouse(allCards, this)) return combination.fullHouse;
@@ -79,6 +81,7 @@ namespace Poker
         public Player(Table t)
         {
             table = t;
+            money = 1000;
         }
 
     }

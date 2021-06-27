@@ -62,6 +62,13 @@ namespace Poker
             this.suitBoxEnemy2 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.winnerLabel = new System.Windows.Forms.Label();
+            this.playerMoneyLabel = new System.Windows.Forms.Label();
+            this.botMoneyLabel = new System.Windows.Forms.Label();
+            this.raiseUpDown = new System.Windows.Forms.NumericUpDown();
+            this.raise_btn = new System.Windows.Forms.Button();
+            this.fold_btn = new System.Windows.Forms.Button();
+            this.check_btn = new System.Windows.Forms.Button();
+            this.pot_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suitBoxPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.valueBoxPlayer1)).BeginInit();
@@ -89,6 +96,7 @@ namespace Poker
             ((System.ComponentModel.ISupportInitialize)(this.valueBoxEnemy2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suitBoxEnemy2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.raiseUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -314,15 +322,15 @@ namespace Poker
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
+            this.errorLabel.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.errorLabel.Location = new System.Drawing.Point(212, 26);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(38, 15);
+            this.errorLabel.Size = new System.Drawing.Size(0, 27);
             this.errorLabel.TabIndex = 22;
-            this.errorLabel.Text = "label1";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1002, 493);
+            this.button2.Location = new System.Drawing.Point(1192, 193);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 24;
@@ -411,11 +419,111 @@ namespace Poker
             this.winnerLabel.TabIndex = 32;
             this.winnerLabel.Text = "winner: ";
             // 
+            // playerMoneyLabel
+            // 
+            this.playerMoneyLabel.AutoSize = true;
+            this.playerMoneyLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.playerMoneyLabel.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.playerMoneyLabel.ForeColor = System.Drawing.Color.Gold;
+            this.playerMoneyLabel.Location = new System.Drawing.Point(59, 582);
+            this.playerMoneyLabel.Name = "playerMoneyLabel";
+            this.playerMoneyLabel.Size = new System.Drawing.Size(180, 27);
+            this.playerMoneyLabel.TabIndex = 33;
+            this.playerMoneyLabel.Text = "Player Money: ";
+            // 
+            // botMoneyLabel
+            // 
+            this.botMoneyLabel.AutoSize = true;
+            this.botMoneyLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.botMoneyLabel.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.botMoneyLabel.ForeColor = System.Drawing.Color.Gold;
+            this.botMoneyLabel.Location = new System.Drawing.Point(872, 26);
+            this.botMoneyLabel.Name = "botMoneyLabel";
+            this.botMoneyLabel.Size = new System.Drawing.Size(143, 27);
+            this.botMoneyLabel.TabIndex = 34;
+            this.botMoneyLabel.Text = "Bot Money: ";
+            // 
+            // raiseUpDown
+            // 
+            this.raiseUpDown.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.raiseUpDown.Location = new System.Drawing.Point(1061, 523);
+            this.raiseUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.raiseUpDown.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.raiseUpDown.Name = "raiseUpDown";
+            this.raiseUpDown.Size = new System.Drawing.Size(120, 23);
+            this.raiseUpDown.TabIndex = 35;
+            this.raiseUpDown.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // raise_btn
+            // 
+            this.raise_btn.Location = new System.Drawing.Point(965, 523);
+            this.raise_btn.Name = "raise_btn";
+            this.raise_btn.Size = new System.Drawing.Size(75, 23);
+            this.raise_btn.TabIndex = 36;
+            this.raise_btn.Text = "Raise";
+            this.raise_btn.UseVisualStyleBackColor = true;
+            this.raise_btn.Click += new System.EventHandler(this.raise_btn_Click);
+            // 
+            // fold_btn
+            // 
+            this.fold_btn.Location = new System.Drawing.Point(965, 489);
+            this.fold_btn.Name = "fold_btn";
+            this.fold_btn.Size = new System.Drawing.Size(75, 23);
+            this.fold_btn.TabIndex = 37;
+            this.fold_btn.Text = "Fold";
+            this.fold_btn.UseVisualStyleBackColor = true;
+            this.fold_btn.Click += new System.EventHandler(this.fold_btn_Click);
+            // 
+            // check_btn
+            // 
+            this.check_btn.Location = new System.Drawing.Point(872, 523);
+            this.check_btn.Name = "check_btn";
+            this.check_btn.Size = new System.Drawing.Size(75, 23);
+            this.check_btn.TabIndex = 38;
+            this.check_btn.Text = "Check";
+            this.check_btn.UseVisualStyleBackColor = true;
+            this.check_btn.Click += new System.EventHandler(this.check_btn_Click);
+            // 
+            // pot_label
+            // 
+            this.pot_label.AutoSize = true;
+            this.pot_label.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pot_label.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pot_label.ForeColor = System.Drawing.Color.Gold;
+            this.pot_label.Location = new System.Drawing.Point(483, 385);
+            this.pot_label.Name = "pot_label";
+            this.pot_label.Size = new System.Drawing.Size(65, 27);
+            this.pot_label.TabIndex = 39;
+            this.pot_label.Text = "POT: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1356, 764);
+            this.Controls.Add(this.pot_label);
+            this.Controls.Add(this.check_btn);
+            this.Controls.Add(this.fold_btn);
+            this.Controls.Add(this.raise_btn);
+            this.Controls.Add(this.raiseUpDown);
+            this.Controls.Add(this.botMoneyLabel);
+            this.Controls.Add(this.playerMoneyLabel);
             this.Controls.Add(this.winnerLabel);
             this.Controls.Add(this.valueBoxEnemy2);
             this.Controls.Add(this.suitBoxEnemy2);
@@ -477,6 +585,7 @@ namespace Poker
             ((System.ComponentModel.ISupportInitialize)(this.valueBoxEnemy2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suitBoxEnemy2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.raiseUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,6 +625,13 @@ namespace Poker
         private System.Windows.Forms.PictureBox suitBoxEnemy2;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label winnerLabel;
+        private System.Windows.Forms.Label playerMoneyLabel;
+        private System.Windows.Forms.Label botMoneyLabel;
+        private System.Windows.Forms.NumericUpDown raiseUpDown;
+        private System.Windows.Forms.Button raise_btn;
+        private System.Windows.Forms.Button fold_btn;
+        private System.Windows.Forms.Button check_btn;
+        private System.Windows.Forms.Label pot_label;
     }
 }
 

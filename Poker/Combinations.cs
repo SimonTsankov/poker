@@ -72,7 +72,7 @@ namespace Poker
                 suitValues.Add((int)card.cardSuit);
             }
             suitValues.Sort();
-
+            //MessageBox.Show(cards.Count + "");
             if (suitValues[0] == suitValues[4])
             {
                 player.combinationHighCardValue = highest;
@@ -80,6 +80,35 @@ namespace Poker
             }
             return false;
         }
+        public static bool almostStraight(List<Card> cards)
+        {
+            
+            List<int> cardValues = new List<int>();
+            foreach (Card card in cards)
+            {
+                cardValues.Add(card.Value);
+            }
+            cardValues.Sort();
+            int consequative = 0;
+            int highest = 0;
+            bool isStraightBool = false;
+            for (int i = 0; i < cardValues.Count - 1; i++)
+            {
+                if (cardValues[i] == cardValues[i + 1] - 1)
+                {
+                    if (cardValues[i + 1] > highest) highest = cardValues[i + 1];
+
+
+                    consequative++;
+                    if (consequative == 3)
+                        isStraightBool = true;
+                }
+                else consequative = 0;
+            }
+           
+            return isStraightBool;
+        }
+       
         public static bool isStraight(List<Card> cards, Player player)
         {
             List<int> cardValues = new List<int>();
